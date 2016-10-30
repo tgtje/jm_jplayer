@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e107Plugin name="Wolf jPlayer for e107" lan="" version="1.0" date="2016-10-30" compatibility="2.0" installRequired="true" >
+<e107Plugin name="Wolf jPlayer for e107" lan="" version="1.0.1" date="2016-10-30" compatibility="2.0" installRequired="true" >
 	<author name="e107 Inc." url="http://e107.org" />
 	<summary lan="">e107 version of A WordPress plugin based on the jPlayer jQuery. </summary>
 	<description lan="">e107 version of A WordPress plugin based on the jPlayer jQuery. Allows multiple playlists.</description>

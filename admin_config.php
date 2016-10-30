@@ -69,7 +69,7 @@ class jm_jplayer_ui extends e_admin_ui
 		protected $pid				= 'id';
 		protected $perPage			= 10; 
 		protected $batchDelete		= true;
-	//	protected $batchCopy		= true;		
+  	protected $batchCopy		= true;		
 	//	protected $sortField		= 'somefield_order';
 	//	protected $orderStep		= 10;
 	//	protected $tabs				= array('Tabl 1','Tab 2'); // Use 'tab'=>0  OR 'tab'=>1 in the $fields below to enable. 
@@ -80,17 +80,16 @@ class jm_jplayer_ui extends e_admin_ui
 	
 		protected $fields 		= array (  'checkboxes' =>   array ( 'title' => '', 'type' => null, 'data' => null, 'width' => '5%', 'thclass' => 'center', 'forced' => '1', 'class' => 'center', 'toggle' => 'e-multiselect',  ),
 		  'id' =>   array ( 'title' => LAN_ID, 'type' => 'number', 'data' => 'int', 'width' => '5%', 'help' => '', 'readParms' => '', 'writeParms' => '', 'class' => 'left', 'thclass' => 'left',  ),
-		  'playlist_id' =>   array ( 'title' => LAN_JPLAYER_ADMIN_07, 'type' => 'dropdown', 'data' => 'int', 'width' => '5%', 
+		  'playlist_id' =>   array ( 'title' => LAN_JPLAYER_ADMIN_07, 'type' => 'dropdown', 'data' => 'int', 'width' => '15%', 
 			  'filter' => true, 'help' => '', 'readParms' => '', 'writeParms' => '', 'class' => 'left', 'thclass' => 'left',  ),
 		  
 		  'name' =>   array ( 'title' => LAN_JPLAYER_ADMIN_39, 'type' => 'text', 'data' => 'str', 'width' => 'auto', 'validate' => true, 
 					'filter' => true, 'inline' => true, 'help' => '', 'readParms' => '', 'writeParms' => '', 'class' => 'left', 'thclass' => 'left',  ),
-		  'artist' =>   array ( 'title' => LAN_JPLAYER_ADMIN_40, 'type' => 'text', 'data' => 'str', 'width' => 'auto', 'help' => '', 
+		  'artist' =>   array ( 'title' => LAN_JPLAYER_ADMIN_40, 'type' => 'text', 'inline' => true, 'data' => 'str', 'width' => 'auto', 'help' => '', 
 				'readParms' => '', 'writeParms' => '', 'class' => 'left', 'thclass' => 'left',  ),
-		  'poster' =>   array ( 'title' => LAN_JPLAYER_ADMIN_47, 'type' => 'text', 'data' => 'str', 'width' => 'auto', 'help' => '', 'readParms' => '', 'writeParms' => '', 'class' => 'left', 'thclass' => 'left',  ),
-		  //'external' =>   array ( 'title' => 'External', 'type' => 'boolean', 'data' => 'int', 'width' => 'auto', 'batch' => true, 'help' => '', 'readParms' => '', 'writeParms' => '', 'class' => 'left', 'thclass' => 'left',  ),
-								  
-		  'mp3' =>   array ( 'title' => 'Mp3', 'type' => 'text', 'data' => 'str', 'width' => 'auto', 'help' => '', 'readParms' => '', 
+ 		  'poster' =>   array ( 'title' => LAN_JPLAYER_ADMIN_47, 'type' => 'image', 'data' => 'str', 'width' => 'auto', 'help' => '', 
+					'readParms' => 'thumb=120x50', 'writeParms' => 'media=jm_jplayer',  'class' => 'left', 'thclass' => 'left',  ),							  
+		  'mp3' =>   array ( 'title' => 'Mp3', 'type' => 'text', 'data' => 'str', 'width' => 'auto', 'help' => '', 'readParms' => '',    'inline' => true,
 				'writeParms' => array('size' => 'block-level'), 'class' => 'left', 'thclass' => 'left',  ),
 		  'ogg' =>   array ( 'title' => LAN_JPLAYER_ADMIN_44, 'type' => 'text', 'data' => 'str', 'width' => 'auto', 
 				'writeParms' => array('size' => 'block-level'), 'help' => LAN_JPLAYER_ADMIN_45, 'readParms' => '',  'class' => 'left', 'thclass' => 'left',  ),
@@ -116,7 +115,9 @@ class jm_jplayer_ui extends e_admin_ui
 			'bg_color'		=> array('title'=> LAN_ADMIN_JPLAYER_OPTIONS_02, 'tab'=>0, 'type'=>'text', 'data' => 'str', 
 				'writeParms' => array('class' => 'colorpicker'), 'help'=>LAN_ADMIN_JPLAYER_OPTIONS_02),
 			'bg_opacity'		=> array('title'=> LAN_ADMIN_JPLAYER_OPTIONS_03, 'tab'=>0, 'type'=>'text', 'data' => 'str', 'help'=>LAN_ADMIN_JPLAYER_OPTIONS_03),
-			'font_color'		=> array('title'=> LAN_ADMIN_JPLAYER_OPTIONS_04, 'tab'=>0, 'type'=>'text', 'data' => 'str', 'help'=>LAN_ADMIN_JPLAYER_OPTIONS_04),
+			'font_color'		=> array('title'=> LAN_ADMIN_JPLAYER_OPTIONS_04, 'tab'=>0, 'type'=>'text', 'data' => 'str',  
+				'writeParms' => array('class' => 'colorpicker'),
+				'help'=>LAN_ADMIN_JPLAYER_OPTIONS_04),
 			'social_meta'		=> array('title'=> LAN_ADMIN_JPLAYER_OPTIONS_07, 'tab'=>1, 'type'=>'boolean', 'data' => 'str', 'help'=>LAN_ADMIN_JPLAYER_OPTIONS_07),
 			'scrollbar'		=> array('title'=> LAN_ADMIN_JPLAYER_OPTIONS_05, 'tab'=>1, 'type'=>'boolean', 'data' => 'str', 'help'=>LAN_ADMIN_JPLAYER_OPTIONS_05),
 			'disable_flash'		=> array('title'=> LAN_ADMIN_JPLAYER_OPTIONS_08, 'tab'=>1, 'type'=>'boolean', 'data' => 'str', 'help'=>LAN_ADMIN_JPLAYER_OPTIONS_08),

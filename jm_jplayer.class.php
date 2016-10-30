@@ -107,10 +107,28 @@ e107::css('inline', $inline_css);
 if (e107::pref('jm_jplayer', 'scrollbar'))
 {
 		e107::css('jm_jplayer', '/assets/css/min/mCustomScrollbar.min.css');
-		e107::js('footer', '{e_PLUGIN}/jm_jplayer/assets/js/min/jquery.mCustomScrollbar.concat.min.js', 'jquery', 5);
+		e107::js('footer', '{e_PLUGIN}/jm_jplayer/assets/js/min/jquery.mCustomScrollbar.concat.min.js', 'jquery', 3);
 }
-
-e107::js('footer', '{e_PLUGIN}/jm_jplayer/assets/js/min/jquery.jplayer.concat.min.js');
+            
+$inline_script = '
+ 
+		var WolfjPlayerParams = { 
+			"iTunesText": "' 	.LAN_FRONT_01 . '", 
+			"amazonText": "' 	. LAN_FRONT_02 . '", 
+			"buyNowText": "' 	. LAN_FRONT_03 . '", 
+			"downloadText": "' .LAN_FRONT_04. '",
+			"byText": "' 			.LAN_FRONT_05. '",
+			"scrollBar": "",
+			"skin": "' .$skin. '",             
+		}; 
+		
+ 
+		';
+	             
+ 
+e107::js('inline', $inline_script, 'jquery', 4);	
+	
+e107::js('footer', '{e_PLUGIN}/jm_jplayer/assets/js/min/jquery.jplayer.concat.min.js', 'jquery', 5);
 
 
 // THIS CLASS IS FOR FUTURE USING
@@ -262,6 +280,7 @@ if (!class_exists('Wolf_Jplayer_Show'))
 						return $poster ? $tp->replaceConstants($poster, 'full') : e_PLUGIN . 'jm_jplayer/assets/images/default_poster.png';
 				}
 
+
 				/**
 				 * Output inline jplayer javascript
 				 *
@@ -286,9 +305,9 @@ if (!class_exists('Wolf_Jplayer_Show'))
 						{
 								$ogg = '';
 								foreach($songs as $song)
-								{
+								{     
 										$free = $song['free'];
-										if ($song->poster)
+										if ($song['poster'])
 										{
 												$poster = $tp->replaceConstants($song['poster'], 'full');
 										}
@@ -298,9 +317,9 @@ if (!class_exists('Wolf_Jplayer_Show'))
 										}
 
 										$playlist.= '{  title : "' . $song['name'] . '", mp3:"' . $tp->replaceConstants($song['mp3'], 'full') . '"';
-										if ($song->ogg) $playlist.= ', oga : "' . $tp->toText($song['ogg']) . '" ';
-										if ($song->artist) $playlist.= ', artist : "' . $song['artist'] . '" ';
-										if ($free != 'on')
+										if ($song['ogg']) { echo "rr"; $playlist.= ', oga : "' . $tp->toText($song['ogg']) . '" ';  }
+										if ($song['artist']) $playlist.= ', artist : "' . $song['artist'] . '" ';
+										if ($free != '1')
 										{
 												if ($song['itunes']) $playlist.= ', itunes : "' . $tp->toText($song['itunes']) . '" ';
 												if ($song['amazon']) $playlist.= ', amazon : "' . $tp->toText($song['amazon']) . '" ';
@@ -539,7 +558,9 @@ if (!class_exists('Wolf_Jplayer_Show'))
 				{
 						$embed = true;
 						$in_popup = false;
-
+						define('e_IFRAME', true);
+						
+					  require_once (HEADERF);
 						$html = $this->jplayer_show_playlist($playlist_id, $in_popup, $embed, true);
 						 
 						return $html;
