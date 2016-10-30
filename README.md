@@ -4,4 +4,4 @@
 Its code was used with permission of original author. It will be probably in future replaced by more e107-ish coding,
 but it's enough for time being.
 
- 
+### First version 1.0
