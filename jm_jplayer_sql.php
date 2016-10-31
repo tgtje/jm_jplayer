@@ -1,7 +1,6 @@
 CREATE TABLE `jm_jplayer` (
 	`id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `mp3` varchar(255) NOT NULL default '',
-  `ogg` varchar(255) NOT NULL default '',
   `name` varchar(255) NOT NULL default '',
   `artist` varchar(255) NOT NULL default '',
   `poster` varchar(255) NOT NULL default '',

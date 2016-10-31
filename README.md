@@ -5,3 +5,5 @@ Its code was used with permission of original author. It will be probably in fut
 but it's enough for time being.
 
 ### First version 1.0
+- 1.0.1  Initial commit
+- 1.0.2  Removing all flash callback, added e_help.php . Thanks tgtje for help.

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e107Plugin name="Wolf jPlayer for e107" lan="" version="1.0.1" date="2016-10-30" compatibility="2.0" installRequired="true" >
+<e107Plugin name="Wolf jPlayer for e107" lan="" version="1.0.2" date="2016-10-30" compatibility="2.0" installRequired="true" >
 	<author name="e107 Inc." url="http://e107.org" />
-	<summary lan="">e107 version of A WordPress plugin based on the jPlayer jQuery. </summary>
-	<description lan="">e107 version of A WordPress plugin based on the jPlayer jQuery. Allows multiple playlists.</description>
+	<summary lan="">e107 version of a WordPress Wolf plugin based on the jPlayer jQuery. </summary>
+	<description lan="">e107 version of a WordPress Wolf plugin based on the jPlayer jQuery. Allows multiple playlists.</description>
 	<keywords>
 		<word>multimedia</word>
     <word>files</word>
 	</keywords>
 	<category>content</category>
-	<copyright></copyright>
+	<copyright>GPL+WTFPL</copyright>
 	<adminLinks>
 		<link url="admin_config.php" description="" icon="" iconSmall="" icon128="" primary="true" >LAN_CONFIGURE</link>
 	</adminLinks>
@@ -18,8 +18,6 @@
 		<pref name='font_color'>#ffffff</pref>
 		<pref name='social_meta'>1</pref>
 		<pref name='scrollbar'>0</pref>
-		<pref name='disable_flash'>0</pref>
-		<pref name='disable_android'>0</pref>
 		<pref name='song_count_before_scroll'>6</pref>
 		<pref name='skin'>1</pref>
 	</pluginPrefs>	

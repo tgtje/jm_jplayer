@@ -10,16 +10,11 @@ define("LAN_JPLAYER_ADMIN_12", "Autoplay (not recommended");
 define("LAN_JPLAYER_ADMIN_04", "Create a new playlist");    /* OK */ 
 
 
-define("LAN_JPLAYER_ADMIN_37", "Upload a new song");
+define("LAN_JPLAYER_ADMIN_37", "Add a new song");
 define("LAN_JPLAYER_ADMIN_38", "Choose Playlist");
 define("LAN_JPLAYER_ADMIN_39", "Song title:");
 define("LAN_JPLAYER_ADMIN_40", "Artist:");
-define("LAN_JPLAYER_ADMIN_41", "Mp3 URL:");
-define("LAN_JPLAYER_ADMIN_42", "(Enter an URL or choose a song from the media library)");
-define("LAN_JPLAYER_ADMIN_43", "Choose an mp3 file");
-define("LAN_JPLAYER_ADMIN_44", "Ogg URL:");
-define("LAN_JPLAYER_ADMIN_45", "(Optional ogg file for firefox and opera)");
-define("LAN_JPLAYER_ADMIN_46", "Choose an ogg file");
+define("LAN_JPLAYER_ADMIN_41", "General music file URL:");
 define("LAN_JPLAYER_ADMIN_47", "Artwork (jpg or png) (80px X 80px):");
 define("LAN_JPLAYER_ADMIN_48", "Itunes URL:");
 define("LAN_JPLAYER_ADMIN_49", "Amazon URL:");

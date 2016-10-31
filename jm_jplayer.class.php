@@ -222,45 +222,7 @@ if (!class_exists('Wolf_Jplayer_Show'))
 						return $popup;
 				}
 
-				/**
-				 * Force flash callback
-				 *
-				 * @return bool
-				 */
-				public
-
-				function force_flash()
-				{
-						global $options;
-						$settings = e107::pref('jm_jplayer');
-						$no_flash_option = isset($settings['disable_flash']);
-						$no_android_flash_option = isset($settings['disable_flash_android']);
-						$user_agent = $_SERVER['HTTP_USER_AGENT'];
-						$is_firefox_on_ios = preg_match('/Macintosh/i', $user_agent) && preg_match('/Firefox/i', $user_agent);
-						$is_android = preg_match('/Android/i', $user_agent) && preg_match('/Chrome/i', $user_agent);
-						if ($no_flash_option && $is_firefox_on_ios)
-						{
-
-								// debug('disable flash' );
-
-								return false;
-						}
-						elseif ($is_android)
-						{
-
-								// debug('disable flash' );
-
-								return false;
-						}
-						else
-						{
-
-								// debug('enable flash' );
-
-								return true;
-						}
-				}
-
+ 
 				/**
 				 * Check if a default playlist poster is set
 				 *
@@ -302,8 +264,7 @@ if (!class_exists('Wolf_Jplayer_Show'))
 						$external = 0;
 						$tp = e107::getParser();
 						if ($songs)
-						{
-								$ogg = '';
+						{							
 								foreach($songs as $song)
 								{     
 										$free = $song['free'];
@@ -316,8 +277,7 @@ if (!class_exists('Wolf_Jplayer_Show'))
 												$poster = $this->get_default_playlist_poster($playlist_id);
 										}
 
-										$playlist.= '{  title : "' . $song['name'] . '", mp3:"' . $tp->replaceConstants($song['mp3'], 'full') . '"';
-										if ($song['ogg']) { echo "rr"; $playlist.= ', oga : "' . $tp->toText($song['ogg']) . '" ';  }
+										$playlist.= '{  title : "' . $song['name'] . '", mp3:"' . $tp->replaceConstants($song['mp3'], 'full') . '"';								
 										if ($song['artist']) $playlist.= ', artist : "' . $song['artist'] . '" ';
 										if ($free != '1')
 										{
@@ -345,23 +305,7 @@ if (!class_exists('Wolf_Jplayer_Show'))
 										swfPath: "' . e_PLUGIN . 'jm_jplayer/assets/js/src",
 										wmode: "window"';
 
-								// Old jPlayer version < 2.6
-
-								if ($this->force_flash())
-								{
-
-										// from previous version : works except for firefox on IOS and chrome on Android
-										// $output .= 'supplied: "mp3"';
-										// $output .= ', solution:"flash, html"';
-
-								}
-								else
-								{
-
-										// $output .= 'supplied: "oga, mp3"';
-										// $output .= ', solution:"html, flash"';
-
-								}
+ 
 
 								// $output .= ', solution:"html, flash"';
 

@@ -11,6 +11,14 @@ if (!getperms('P'))
 
 e107::lan('jm_jplayer',true);
 
+e107::css('inline', "
+
+.help-table td { padding:7px 0; }
+td.chars { padding-right:15px; border-right:1px solid black }
+.toggle-icon { cursor: pointer }
+td.lan-odd { background-color: rgba(255,255,255,0.05); }
+
+");
 
 class jm_jplayer_adminArea extends e_admin_dispatcher
 {
@@ -81,19 +89,15 @@ class jm_jplayer_ui extends e_admin_ui
 		protected $fields 		= array (  'checkboxes' =>   array ( 'title' => '', 'type' => null, 'data' => null, 'width' => '5%', 'thclass' => 'center', 'forced' => '1', 'class' => 'center', 'toggle' => 'e-multiselect',  ),
 		  'id' =>   array ( 'title' => LAN_ID, 'type' => 'number', 'data' => 'int', 'width' => '5%', 'help' => '', 'readParms' => '', 'writeParms' => '', 'class' => 'left', 'thclass' => 'left',  ),
 		  'playlist_id' =>   array ( 'title' => LAN_JPLAYER_ADMIN_07, 'type' => 'dropdown', 'data' => 'int', 'width' => '15%', 
-			  'filter' => true, 'help' => '', 'readParms' => '', 'writeParms' => '', 'class' => 'left', 'thclass' => 'left',  ),
-		  
+			  'filter' => true, 'help' => '', 'readParms' => '', 'writeParms' => '', 'class' => 'left', 'thclass' => 'left',  ),		  
 		  'name' =>   array ( 'title' => LAN_JPLAYER_ADMIN_39, 'type' => 'text', 'data' => 'str', 'width' => 'auto', 'validate' => true, 
 					'filter' => true, 'inline' => true, 'help' => '', 'readParms' => '', 'writeParms' => '', 'class' => 'left', 'thclass' => 'left',  ),
 		  'artist' =>   array ( 'title' => LAN_JPLAYER_ADMIN_40, 'type' => 'text', 'inline' => true, 'data' => 'str', 'width' => 'auto', 'help' => '', 
 				'readParms' => '', 'writeParms' => '', 'class' => 'left', 'thclass' => 'left',  ),
  		  'poster' =>   array ( 'title' => LAN_JPLAYER_ADMIN_47, 'type' => 'image', 'data' => 'str', 'width' => 'auto', 'help' => '', 
 					'readParms' => 'thumb=120x50', 'writeParms' => 'media=jm_jplayer',  'class' => 'left', 'thclass' => 'left',  ),							  
-		  'mp3' =>   array ( 'title' => 'Mp3', 'type' => 'text', 'data' => 'str', 'width' => 'auto', 'help' => '', 'readParms' => '',    'inline' => true,
+		  'mp3' =>   array ( 'title' => LAN_JPLAYER_ADMIN_41, 'type' => 'text', 'data' => 'str', 'width' => 'auto', 'help' => '', 'readParms' => '',    'inline' => true,
 				'writeParms' => array('size' => 'block-level'), 'class' => 'left', 'thclass' => 'left',  ),
-		  'ogg' =>   array ( 'title' => LAN_JPLAYER_ADMIN_44, 'type' => 'text', 'data' => 'str', 'width' => 'auto', 
-				'writeParms' => array('size' => 'block-level'), 'help' => LAN_JPLAYER_ADMIN_45, 'readParms' => '',  'class' => 'left', 'thclass' => 'left',  ),
-
 		  'itunes' =>   array ( 'title' => LAN_JPLAYER_ADMIN_48, 'type' => 'text', 'data' => 'str', 'width' => 'auto', 'help' => '', 'readParms' => '', 
 			  'writeParms' => array('size' => 'block-level'), 'class' => 'left', 'thclass' => 'left',  ),
 		  'amazon' =>   array ( 'title' => LAN_JPLAYER_ADMIN_49, 'type' => 'text', 'data' => 'str', 'width' => 'auto', 'help' => '', 'readParms' => '', 
@@ -120,8 +124,6 @@ class jm_jplayer_ui extends e_admin_ui
 				'help'=>LAN_ADMIN_JPLAYER_OPTIONS_04),
 			'social_meta'		=> array('title'=> LAN_ADMIN_JPLAYER_OPTIONS_07, 'tab'=>1, 'type'=>'boolean', 'data' => 'str', 'help'=>LAN_ADMIN_JPLAYER_OPTIONS_07),
 			'scrollbar'		=> array('title'=> LAN_ADMIN_JPLAYER_OPTIONS_05, 'tab'=>1, 'type'=>'boolean', 'data' => 'str', 'help'=>LAN_ADMIN_JPLAYER_OPTIONS_05),
-			'disable_flash'		=> array('title'=> LAN_ADMIN_JPLAYER_OPTIONS_08, 'tab'=>1, 'type'=>'boolean', 'data' => 'str', 'help'=>LAN_ADMIN_JPLAYER_OPTIONS_08),
-			'disable_android'		=> array('title'=> LAN_ADMIN_JPLAYER_OPTIONS_09, 'tab'=>1, 'type'=>'boolean', 'data' => 'str', 'help'=>LAN_ADMIN_JPLAYER_OPTIONS_09),
 			'song_count_before_scroll'		=> array('title'=> LAN_ADMIN_JPLAYER_OPTIONS_06, 'tab'=>1, 'type'=>'number', 'data' => 'str', 'help'=>LAN_ADMIN_JPLAYER_OPTIONS_06),
 			'skin'		=> array('title'=> LAN_ADMIN_JPLAYER_OPTIONS_01, 'tab'=>0, 'type'=>'dropdown', 'data' => 'str', 'help'=>LAN_ADMIN_JPLAYER_OPTIONS_01),
 		);  
