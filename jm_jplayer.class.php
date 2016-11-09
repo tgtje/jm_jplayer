@@ -23,6 +23,7 @@ e107::css('jm_jplayer', '/assets/css/min/jplayer-' . $css_filename . '.min.css')
 e107::css('jm_jplayer', '/assets/wp/dashicons.min.css');
 e107::css('jm_jplayer', '/assets/wp/dashicons.min.css');
 
+e107::lan('jm_jplayer',false,true);
 require_once (e_PLUGIN . 'jm_jplayer/includes/functions.php');
 
 $bg_color_hex 	= e107::pref('jm_jplayer', 'bg_color') ? e107::pref('jm_jplayer', 'bg_color') : '#353535';

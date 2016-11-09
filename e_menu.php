@@ -11,13 +11,14 @@
 
 if (!defined('e107_INIT')) { exit; }
 
+
 //v2.x Standard for extending menu configuration within Menu Manager. (replacement for v1.x config.php)
 	
 class jm_jplayer_menu
 {
 	function __construct()
 	{
-		e107::lan('jm_jplayer','admin',true); // English_menu.php or {LANGUAGE}_menu.php
+		e107::lan('jm_jplayer','admin',true,true); // English_menu.php or {LANGUAGE}_menu.php
 	}
 
 	/**

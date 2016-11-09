@@ -9,7 +9,7 @@ if (!getperms('P'))
 	exit;
 }
 
-e107::lan('jm_jplayer',true);
+e107::lan('jm_jplayer',true,true);
 
 e107::css('inline', "
 
